@@ -1,0 +1,76 @@
+@startuml
+title Class Diagram BeePOS
+
+class User {
+    +int user_id
+    +string nama_user
+    +string username
+    +string password
+    +string role
+    --
+    +login()
+    +logout()
+    +kelolaDataBarang()
+    +kelolaLaporan()
+}
+
+class Laporan {
+    +int laporan_id
+    +date tanggal_laporan
+    +int user_id
+    --
+    +generateLaporan()
+    +tampilkanLaporan()
+}
+
+class Item {
+    +int item_id
+    +string nama_item
+    +double harga_item
+    +int stok_item
+    --
+    +tambahItem()
+    +updateItem()
+    +hapusItem()
+    +tampilkanItem()
+}
+
+class Transaksi {
+    +int transaksi_id
+    +date tanggal_transaksi
+    +double total_harga
+    +int user_id
+    --
+    +tambahTransaksi()
+    +hitungTotal()
+    +hapusTransaksi()
+}
+
+class Pembayaran {
+    +int pembayaran_id
+    +int transaksi_id
+    +string metode_pembayaran
+    +double jumlah_bayar
+    --
+    +prosesPembayaran()
+    +validasiPembayaran()
+}
+
+class Bukti_Transaksi {
+    +int struk_id
+    +int transaksi_id
+    +string nomor_struk
+    +date tanggal_cetak
+    --
+    +cetakStruk()
+    +tampilkanStruk()
+}
+
+' ===== RELATIONSHIPS =====
+User "1" -- "N" Laporan
+User "1" -- "N" Transaksi
+Item "1" -- "N" Transaksi
+Transaksi "1" -- "1" Pembayaran
+Transaksi "1" -- "1" Bukti_Transaksi
+
+@enduml

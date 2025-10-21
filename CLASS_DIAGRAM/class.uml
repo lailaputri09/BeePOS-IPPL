@@ -8,10 +8,10 @@ class User {
     +string password
     +string role
     --
-    +login()
-    +logout()
-    +kelolaDataBarang()
-    +kelolaLaporan()
+    -login()
+    -logout()
+    -kelolaDataBarang()
+    -kelolaLaporan()
 }
 
 class Laporan {
@@ -19,8 +19,8 @@ class Laporan {
     +date tanggal_laporan
     +int user_id
     --
-    +generateLaporan()
-    +tampilkanLaporan()
+    -generateLaporan()
+    -tampilkanLaporan()
 }
 
 class Item {
@@ -29,10 +29,10 @@ class Item {
     +double harga_item
     +int stok_item
     --
-    +tambahItem()
-    +updateItem()
-    +hapusItem()
-    +tampilkanItem()
+    -tambahItem()
+    -updateItem()
+    -hapusItem()
+    -tampilkanItem()
 }
 
 class Transaksi {
@@ -41,9 +41,9 @@ class Transaksi {
     +double total_harga
     +int user_id
     --
-    +tambahTransaksi()
-    +hitungTotal()
-    +hapusTransaksi()
+    -tambahTransaksi()
+    -hitungTotal()
+    -hapusTransaksi()
 }
 
 class Pembayaran {
@@ -52,8 +52,8 @@ class Pembayaran {
     +string metode_pembayaran
     +double jumlah_bayar
     --
-    +prosesPembayaran()
-    +validasiPembayaran()
+    -prosesPembayaran()
+    -validasiPembayaran()
 }
 
 class Bukti_Transaksi {
@@ -62,8 +62,8 @@ class Bukti_Transaksi {
     +string nomor_struk
     +date tanggal_cetak
     --
-    +cetakStruk()
-    +tampilkanStruk()
+    -cetakStruk()
+    -tampilkanStruk()
 }
 
 ' ===== RELATIONSHIPS =====

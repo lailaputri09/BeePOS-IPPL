@@ -67,9 +67,9 @@ class Bukti_Transaksi {
 }
 
 ' ===== RELATIONSHIPS =====
-User "1" -- "N" Laporan
-User "1" -- "N" Transaksi
-Item "1" -- "N" Transaksi
+User "1" -- "M" Laporan
+User "1" -- "M" Transaksi
+Item "M" -- "M" Transaksi
 Transaksi "1" -- "1" Pembayaran
 Transaksi "1" -- "1" Bukti_Transaksi
 
